@@ -1,2 +1,2 @@
-# POM-CHECKER_Release-Notes
+# POM-CHECKER_ReleaseNotes
 POM-CHECKER Release Note Web Page
