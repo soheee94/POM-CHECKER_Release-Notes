@@ -1,19 +1,32 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
-import releaseHead from "./components/releaseHead";
+import styled, { createGlobalStyle } from "styled-components";
+import ReleaseHead from "./components/ReleaseHead";
+import ReleaseList from "./components/ReleaseList";
 
 const GlobalStyle = createGlobalStyle`
   body{
     background : #222E38;
     width: 100%;
+    font-family : 'Noto Sans KR', sans-serif;
   }
+`;
+
+const ReleaseContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 500px;
+  width: 66%;
+  padding: 100px 0;
 `;
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <releaseHead></releaseHead>
+      <ReleaseContainer>
+        <ReleaseHead></ReleaseHead>
+        <ReleaseList></ReleaseList>
+      </ReleaseContainer>
     </>
   );
 }
