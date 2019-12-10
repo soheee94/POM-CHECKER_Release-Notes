@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ReleaseItem from "./ReleaseItem";
 
-const PlatformButtonGroup = styled.div`
+const PlatformInputGroup = styled.div`
   padding: 20px;
   input {
     display: none;
@@ -120,7 +120,7 @@ function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
   return (
     <>
-      <PlatformButtonGroup>
+      <PlatformInputGroup>
         <input
           type="radio"
           name="platforms"
@@ -131,7 +131,7 @@ function ReleaseList() {
         <label htmlFor="Web">Web</label>
         <input type="radio" name="platforms" id="Unity" onChange={() => setPlatformType("Unity")} />
         <label htmlFor="Unity">Unity</label>
-      </PlatformButtonGroup>
+      </PlatformInputGroup>
       <ReleaseListBlock>
         {releases[platformType].map((release, index) => (
           <ReleaseItem

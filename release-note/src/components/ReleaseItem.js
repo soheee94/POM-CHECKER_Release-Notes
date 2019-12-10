@@ -45,26 +45,38 @@ const ItemHeader = styled.div`
 `;
 
 const ItemIssues = styled.div`
-  margin-left: 95px;
+  margin-left: 0px;
+  div {
+    display: flex;
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-left: 95px;
+  }
+
+  span {
+    background: #495f70;
+    border-radius: 3px;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-right: 20px;
+    font-size: 10px;
+    display: inline-block;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
   ul {
     margin: 0 0 40px 0;
     padding: 0;
     list-style-type: none;
-    span {
-      background: #495f70;
-      border-radius: 3px;
-      width: 75px;
-      height: 25px;
-      line-height: 25px;
-      text-align: center;
-      margin-right: 15px;
-      font-size: 10px;
-      display: inline-block;
-      letter-spacing: 0.15em;
-    }
 
     li {
-      margin: 20px 0;
+      margin-bottom: 20px;
 
       img {
         display: block;
@@ -84,15 +96,17 @@ function ReleaseItem({ version, date, issues, release }) {
       </ItemHeader>
       <ItemIssues>
         {issues.map((issue, index) => (
-          <ul key={index}>
+          <div key={index}>
             <span> {issue.type}</span>
-            {issue.list.map((item, index) => (
-              <li key={index}>
-                {index + 1}. {item.text}
-                {item.image && <img src={item.image} alt="상세 이미지" />}
-              </li>
-            ))}
-          </ul>
+            <ul>
+              {issue.list.map((item, index) => (
+                <li key={index}>
+                  {index + 1}. {item.text}
+                  {item.image && <img src={item.image} alt="상세 이미지" />}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
       </ItemIssues>
     </ItemContainer>
