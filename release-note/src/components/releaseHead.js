@@ -11,19 +11,24 @@ const ReleaseHeadBlock = styled.div`
   }
   p {
     color: white;
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 26px;
     margin-top: 15px;
     margin-bottom: 20px;
     letter-spacing: 0.08em;
     font-weight: 300;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 `;
 
 function ReleaseHead() {
   return (
     <ReleaseHeadBlock>
-      <img src={logo} />
+      <img src={logo} alt="POM-CHCKER LOGO" />
       <p>Release notes</p>
     </ReleaseHeadBlock>
   );

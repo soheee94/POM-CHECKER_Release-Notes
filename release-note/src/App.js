@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family : 'Noto Sans KR', sans-serif !important;
     color : rgba(255, 255, 255, 0.5);
+    font-size : 14px;
   }
 `;
 
@@ -16,8 +17,11 @@ const ReleaseContainer = styled.div`
   margin: 0 auto;
   max-width: 1280px;
   height: 500px;
-  width: 66%;
-  padding: 100px 0;
+  padding: 80px 0;
+
+  @media only screen and (min-width: 768px) {
+    width: 66%;
+  }
 `;
 
 function App() {

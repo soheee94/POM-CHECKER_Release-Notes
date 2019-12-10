@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import ReleaseItem from "./ReleaseItem";
 
 const PlatformButtonGroup = styled.div`
@@ -13,24 +13,25 @@ const PlatformButtonGroup = styled.div`
   label {
     margin-right: 30px;
     cursor: pointer;
-    font-size: 14px;
   }
 `;
+
+const ReleaseListBlock = styled.div``;
 
 function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
   return (
     <>
-      <PlatformButtonGroup platformType={platformType}>
+      <PlatformButtonGroup>
         <input type="radio" name="platforms" id="Web" defaultChecked onChange={() => setPlatformType("Web")} />
         <label htmlFor="Web">Web</label>
         <input type="radio" name="platforms" id="Unity" onChange={() => setPlatformType("Unity")} />
         <label htmlFor="Unity">Unity</label>
       </PlatformButtonGroup>
-      <div>
+      <ReleaseListBlock platformType={platformType}>
         <ReleaseItem></ReleaseItem>
         <ReleaseItem></ReleaseItem>
-      </div>
+      </ReleaseListBlock>
     </>
   );
 }
