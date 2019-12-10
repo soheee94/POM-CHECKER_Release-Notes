@@ -16,11 +16,10 @@ const GlobalStyle = createGlobalStyle`
 const ReleaseContainer = styled.div`
   margin: 0 auto;
   max-width: 1280px;
-  height: 500px;
   padding: 80px 0;
 
   @media only screen and (min-width: 768px) {
-    width: 66%;
+    width: 70%;
   }
 `;
 
