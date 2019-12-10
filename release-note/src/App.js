@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     background : #222E38;
     width: 100%;
     font-family : 'Noto Sans KR', sans-serif !important;
+    color : rgba(255, 255, 255, 0.5);
   }
 `;
 

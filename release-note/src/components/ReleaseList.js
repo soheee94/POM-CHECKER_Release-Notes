@@ -3,37 +3,29 @@ import styled, { css } from "styled-components";
 import ReleaseItem from "./ReleaseItem";
 
 const PlatformButtonGroup = styled.div`
-  button {
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-    color: white;
-    font-family: "Noto Sans KR", sans-serif !important;
-    &:hover {
+  padding: 20px;
+  input {
+    display: none;
+    &:checked + label {
       color: #eb5244;
     }
-
-    ${props =>
-      props.platformType === props.type ||
-      css`
-        color: #eb5244;
-      `}
+  }
+  label {
+    margin-right: 30px;
+    cursor: pointer;
+    font-size: 14px;
   }
 `;
 
 function ReleaseList() {
-  const [platformType, setPlatformType] = useState("");
-  console.log(platformType);
+  const [platformType, setPlatformType] = useState("Web");
   return (
     <>
-      <PlatformButtonGroup>
-        <button type="Web" platformType={platformType} onClick={() => setPlatformType("Web")}>
-          Web
-        </button>
-        <button type="Unity" platformType={platformType} onClick={() => setPlatformType("Unity")}>
-          Unity
-        </button>
+      <PlatformButtonGroup platformType={platformType}>
+        <input type="radio" name="platforms" id="Web" defaultChecked onChange={() => setPlatformType("Web")} />
+        <label htmlFor="Web">Web</label>
+        <input type="radio" name="platforms" id="Unity" onChange={() => setPlatformType("Unity")} />
+        <label htmlFor="Unity">Unity</label>
       </PlatformButtonGroup>
       <div>
         <ReleaseItem></ReleaseItem>
