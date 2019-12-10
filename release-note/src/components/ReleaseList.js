@@ -29,63 +29,92 @@ const ReleaseListBlock = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: calc((75px / 2) + 20px);
+    left: calc((75px / 2) + 25px);
     z-index: -1;
   }
 `;
 
-const releases = [
-  {
-    version: "2.5.1",
-    date: "2019-11-25",
-    release: true,
-    issues: [
-      {
-        type: "NEW",
-        list: [
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") },
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") }
-        ]
-      },
-      {
-        type: "UPDATE",
-        list: [
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: "" },
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: "" }
-        ]
-      }
-    ]
-  },
-  {
-    version: "2.5.0",
-    date: "2019-11-24",
-    release: false,
-    issues: [
-      {
-        type: "NEW",
-        list: [
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-        ]
-      },
-      {
-        type: "UPDATE",
-        list: [
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: "" },
-          { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-          { text: "저쩌고 저쩌꼬 22", image: "" }
-        ]
-      }
-    ]
-  }
-];
+const releases = {
+  Web: [
+    {
+      version: "2.5.1",
+      date: "2019-11-25",
+      release: true,
+      issues: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      issues: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    }
+  ],
+  Unity: [
+    {
+      version: "1.8.2",
+      date: "2018-10-01",
+      release: true,
+      issues: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    }
+  ]
+};
 
 function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
@@ -103,8 +132,8 @@ function ReleaseList() {
         <input type="radio" name="platforms" id="Unity" onChange={() => setPlatformType("Unity")} />
         <label htmlFor="Unity">Unity</label>
       </PlatformButtonGroup>
-      <ReleaseListBlock platformType={platformType}>
-        {releases.map((release, index) => (
+      <ReleaseListBlock>
+        {releases[platformType].map((release, index) => (
           <ReleaseItem
             key={index}
             version={release.version}

@@ -2,7 +2,21 @@ import React from "react";
 import styled from "styled-components";
 
 const ItemContainer = styled.div`
-  padding: 20px;
+  padding: 25px;
+  .release {
+    display: block;
+    background: #d59545;
+    border-radius: 5px;
+    color: white;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+  }
 `;
 
 const ItemHeader = styled.div`
@@ -59,6 +73,7 @@ const ItemIssues = styled.div`
 function ReleaseItem({ version, date, issues, release }) {
   return (
     <ItemContainer>
+      {release && <span className="release">RELEASE</span>}
       <ItemHeader>
         <span className="version">{version}</span>
         <div className="date">{date}</div>
