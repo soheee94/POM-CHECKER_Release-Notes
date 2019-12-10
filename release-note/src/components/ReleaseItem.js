@@ -49,6 +49,7 @@ const ItemIssues = styled.div`
   ul {
     margin: 0 0 40px 0;
     padding: 0;
+    list-style-type: none;
     span {
       background: #495f70;
       border-radius: 3px;
@@ -63,9 +64,12 @@ const ItemIssues = styled.div`
     }
 
     li {
-      display: flex;
-      flex-direction: column;
       margin: 20px 0;
+
+      img {
+        display: block;
+        margin-top: 10px;
+      }
     }
   }
 `;
