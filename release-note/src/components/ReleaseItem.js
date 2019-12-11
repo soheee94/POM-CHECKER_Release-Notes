@@ -3,18 +3,20 @@ import styled from "styled-components";
 
 const ItemContainer = styled.div`
   padding: 25px;
-  .release {
-    display: block;
-    background: #d59545;
+  .badge {
     border-radius: 5px;
     color: white;
     width: 75px;
-    height: 25px;
-    line-height: 25px;
-    margin-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
     text-align: center;
     font-weight: 500;
     letter-spacing: 0.08em;
+  }
+  .release-badge {
+    background: #d59545;
+    margin-bottom: 10px;
     font-size: 12px;
   }
 `;
@@ -24,15 +26,9 @@ const ItemHeader = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
-  .version {
+  .version-badge {
     background: #eb5244;
-    border-radius: 5px;
-    color: white;
-    width: 75px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    font-weight: 500;
+
     margin-right: 20px;
   }
   .date {
@@ -44,7 +40,7 @@ const ItemHeader = styled.div`
   }
 `;
 
-const ItemIssues = styled.div`
+const ItemChangeLogs = styled.div`
   margin-left: 0px;
   div {
     display: flex;
@@ -57,18 +53,16 @@ const ItemIssues = styled.div`
     margin-left: 95px;
   }
 
-  span {
+  .change-badge {
     background: #495f70;
-    border-radius: 3px;
-    width: 75px;
     height: 25px;
     line-height: 25px;
-    text-align: center;
     margin-right: 20px;
     font-size: 10px;
-    display: inline-block;
     letter-spacing: 0.15em;
     margin-bottom: 20px;
+    border-radius: 3px;
+    font-weight: normal;
   }
   ul {
     margin: 0 0 40px 0;
@@ -86,20 +80,20 @@ const ItemIssues = styled.div`
   }
 `;
 
-function ReleaseItem({ version, date, issues, release }) {
+function ReleaseItem({ version, date, changeLogs, release }) {
   return (
     <ItemContainer>
-      {release && <span className="release">RELEASE</span>}
+      {release && <span className="release-badge badge">RELEASE</span>}
       <ItemHeader>
-        <span className="version">{version}</span>
+        <span className="version-badge badge">{version}</span>
         <div className="date">{date}</div>
       </ItemHeader>
-      <ItemIssues>
-        {issues.map((issue, index) => (
+      <ItemChangeLogs>
+        {changeLogs.map((log, index) => (
           <div key={index}>
-            <span> {issue.type}</span>
+            <span className="badge change-badge"> {log.type}</span>
             <ul>
-              {issue.list.map((item, index) => (
+              {log.list.map((item, index) => (
                 <li key={index}>
                   {index + 1}. {item.text}
                   {item.image && <img src={item.image} alt="상세 이미지" />}
@@ -108,7 +102,7 @@ function ReleaseItem({ version, date, issues, release }) {
             </ul>
           </div>
         ))}
-      </ItemIssues>
+      </ItemChangeLogs>
     </ItemContainer>
   );
 }

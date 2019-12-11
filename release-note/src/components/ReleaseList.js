@@ -34,13 +34,13 @@ const ReleaseListBlock = styled.div`
   }
 `;
 
-const releases = {
+const releaseData = {
   Web: [
     {
       version: "2.5.1",
       date: "2019-11-25",
       release: true,
-      issues: [
+      changeLogs: [
         {
           type: "NEW",
           list: [
@@ -65,7 +65,7 @@ const releases = {
       version: "2.5.0",
       date: "2019-11-24",
       release: false,
-      issues: [
+      changeLogs: [
         {
           type: "NEW",
           list: [
@@ -92,7 +92,7 @@ const releases = {
       version: "1.8.2",
       date: "2018-10-01",
       release: true,
-      issues: [
+      changeLogs: [
         {
           type: "NEW",
           list: [
@@ -133,12 +133,12 @@ function ReleaseList() {
         <label htmlFor="Unity">Unity</label>
       </PlatformInputGroup>
       <ReleaseListBlock>
-        {releases[platformType].map((release, index) => (
+        {releaseData[platformType].map((release, index) => (
           <ReleaseItem
             key={index}
             version={release.version}
             date={release.date}
-            issues={release.issues}
+            changeLogs={release.changeLogs}
             release={release.release}
           ></ReleaseItem>
         ))}
