@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ReleaseItem from "./ReleaseItem";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const PlatformInputGroup = styled.div`
   padding: 20px;
@@ -85,6 +86,206 @@ const releaseData = {
           ]
         }
       ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
     }
   ],
   Unity: [
@@ -118,30 +319,86 @@ const releaseData = {
 
 function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
+  const [state, setState] = useState({
+    items: releaseData[platformType].filter((item, index) => index < 5),
+    hasMore: true,
+    itemLength: 5
+  });
+
+  const onChange = e => {
+    setPlatformType(e.target.value);
+    setState({
+      items: releaseData[e.target.value].filter((item, index) => index < 5),
+      hasMore: true,
+      itemLength: 5
+    });
+  };
+
+  const fetchMoreData = () => {
+    if (state.items.length >= releaseData[platformType].length) {
+      setState({ ...state, hasMore: false });
+      return;
+    }
+    setTimeout(() => {
+      const addItemLength = state.itemLength + 5;
+      setState({
+        ...state,
+        items: state.items.concat(
+          releaseData[platformType].filter(
+            (item, index) => index < addItemLength && index >= state.itemLength
+          )
+        ),
+        itemLength: addItemLength
+      });
+    }, 1500);
+  };
+
   return (
     <>
       <PlatformInputGroup>
         <input
           type="radio"
           name="platforms"
+          value="Web"
           id="Web"
-          defaultChecked
-          onChange={() => setPlatformType("Web")}
+          checked={platformType === "Web"}
+          onChange={onChange}
         />
         <label htmlFor="Web">Web</label>
-        <input type="radio" name="platforms" id="Unity" onChange={() => setPlatformType("Unity")} />
+        <input
+          type="radio"
+          name="platforms"
+          value="Unity"
+          id="Unity"
+          checked={platformType === "Unity"}
+          onChange={onChange}
+        />
         <label htmlFor="Unity">Unity</label>
       </PlatformInputGroup>
       <ReleaseListBlock>
-        {releaseData[platformType].map((release, index) => (
-          <ReleaseItem
-            key={index}
-            version={release.version}
-            date={release.date}
-            changeLogs={release.changeLogs}
-            release={release.release}
-          ></ReleaseItem>
-        ))}
+        <InfiniteScroll
+          dataLength={state.items.length}
+          next={fetchMoreData}
+          hasMore={state.hasMore}
+          loader={<h4 style={{ textAlign: "center" }}>Loading...</h4>}
+          endMessage={
+            <p style={{ textAlign: "center" }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
+        >
+          {/* releaseData[platformType] */}
+
+          {state.items.map((release, index) => (
+            <ReleaseItem
+              key={index}
+              version={release.version}
+              date={release.date}
+              changeLogs={release.changeLogs}
+              release={release.release}
+            ></ReleaseItem>
+          ))}
+        </InfiniteScroll>
       </ReleaseListBlock>
     </>
   );
