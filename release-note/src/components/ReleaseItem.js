@@ -107,4 +107,4 @@ function ReleaseItem({ version, date, changeLogs, release }) {
   );
 }
 
-export default ReleaseItem;
+export default React.memo(ReleaseItem);
