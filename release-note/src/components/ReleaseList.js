@@ -36,13 +36,296 @@ const ReleaseListBlock = styled.div`
   }
 `;
 
-async function getReleaseData() {
-  const response = await axios.get(`http://pomchecker.com/release-note/data.json`);
-  return response.json();
-}
+// async function getReleaseData() {
+//   const response = await axios.get(
+//     `http://pomchecker.com/release-note/data.json`
+//   );
+//   return response.json();
+// }
 
-const releaseData = getReleaseData();
-console.log(releaseData);
+const releaseData = {
+  Web: [
+    {
+      version: "2.5.1",
+      date: "2019-11-25",
+      release: true,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.0",
+      date: "2019-11-24",
+      release: false,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    }
+  ],
+  Unity: [
+    {
+      version: "1.8.2",
+      date: "2018-10-01",
+      release: true,
+      changeLogs: [
+        {
+          type: "NEW",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+          ]
+        },
+        {
+          type: "UPDATE",
+          list: [
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" },
+            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
+            { text: "저쩌고 저쩌꼬 22", image: "" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// console.log(releaseData);
 
 function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
