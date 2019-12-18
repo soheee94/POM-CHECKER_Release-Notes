@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import ReleaseItem from "./ReleaseItem";
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -35,13 +34,6 @@ const ReleaseListBlock = styled.div`
     z-index: -1;
   }
 `;
-
-// async function getReleaseData() {
-//   const response = await axios.get(
-//     `http://pomchecker.com/release-note/data.json`
-//   );
-//   return response.json();
-// }
 
 const releaseData = {
   Web: [
@@ -296,40 +288,14 @@ const releaseData = {
       ]
     }
   ],
-  Unity: [
-    {
-      version: "1.8.2",
-      date: "2018-10-01",
-      release: true,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    }
-  ]
+  Unity: []
 };
 
 function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
   const [state, setState] = useState({
     items: releaseData[platformType].filter((item, index) => index < 5),
-    hasMore: true,
+    hasMore: releaseData[platformType].length === 0 ? false : true,
     itemLength: 5
   });
 
@@ -337,7 +303,7 @@ function ReleaseList() {
     setPlatformType(e.target.value);
     setState({
       items: releaseData[e.target.value].filter((item, index) => index < 5),
-      hasMore: true,
+      hasMore: releaseData[e.target.value].length === 0 ? false : true,
       itemLength: 5
     });
   };
@@ -383,24 +349,28 @@ function ReleaseList() {
         />
         <label htmlFor="Unity">Unity</label>
       </PlatformInputGroup>
-      <ReleaseListBlock>
-        <InfiniteScroll
-          dataLength={state.items.length}
-          next={fetchMoreData}
-          hasMore={state.hasMore}
-          loader={<h4 style={{ textAlign: "center" }}>Loading...</h4>}
-        >
-          {state.items.map((release, index) => (
-            <ReleaseItem
-              key={index}
-              version={release.version}
-              date={release.date}
-              changeLogs={release.changeLogs}
-              release={release.release}
-            ></ReleaseItem>
-          ))}
-        </InfiniteScroll>
-      </ReleaseListBlock>
+      {state.items.length !== 0 ? (
+        <ReleaseListBlock>
+          <InfiniteScroll
+            dataLength={state.items.length}
+            next={fetchMoreData}
+            hasMore={state.hasMore}
+            loader={<p style={{ textAlign: "center" }}>데이터를 불러오는 중</p>}
+          >
+            {state.items.map((release, index) => (
+              <ReleaseItem
+                key={index}
+                version={release.version}
+                date={release.date}
+                changeLogs={release.changeLogs}
+                release={release.release}
+              ></ReleaseItem>
+            ))}
+          </InfiniteScroll>
+        </ReleaseListBlock>
+      ) : (
+        <p style={{ textAlign: "center" }}>데이터가 존재 하지 않습니다.</p>
+      )}
     </>
   );
 }
