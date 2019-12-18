@@ -34,255 +34,48 @@ const ReleaseListBlock = styled.div`
     z-index: -1;
   }
 `;
-
+// TYPE : NEW(추가), REMOVE(제거), UPDATE(기능 수정), FIXED(버그 수정)
 const releaseData = {
   Web: [
     {
-      version: "2.5.1",
-      date: "2019-11-25",
+      version: "2.5.6",
+      date: "2019-12-18",
+      release: false,
+      changeLogs: [
+        {
+          type: "UPDATE",
+          list: [
+            {
+              title: "환자 목록 무한 스크롤(Infinite Scroll) 적용",
+              description: `초기 접속 시 환자 20명 나타내고, 스크롤 감지 후 맨 아래 닿았을 때 20명 추가`
+            }
+          ]
+        }
+      ]
+    },
+    {
+      version: "2.5.5",
+      date: "2019-12-11",
       release: true,
       changeLogs: [
         {
           type: "NEW",
           list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
+            {
+              title: "setting.json 추가 (POM-CHECKER/)",
+              description: `hospitalType으로 병원 분류를 설정할 수 있도록 추가\n
+                      - 'korean'일 경우 Posture 데이터 값 수정 가능\n
+                      - 'skeleton'일 경우 수정 불가능\n
+                      - default는 'skeleton'`
+            }
           ]
         },
         {
-          type: "UPDATE",
+          type: "REMOVE",
           list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: require("../asset/logo.png") }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
-          ]
-        }
-      ]
-    },
-    {
-      version: "2.5.0",
-      date: "2019-11-24",
-      release: false,
-      changeLogs: [
-        {
-          type: "NEW",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "../asset/logo.png" }
-          ]
-        },
-        {
-          type: "UPDATE",
-          list: [
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" },
-            { text: "어쩌고 저쩌고, ㅎㅎㅎ" },
-            { text: "저쩌고 저쩌꼬 22", image: "" }
+            {
+              title: "Posture Ankle 부위 제거 (보류)"
+            }
           ]
         }
       ]

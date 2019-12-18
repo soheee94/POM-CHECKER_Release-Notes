@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ItemContainer = styled.div`
   padding: 25px;
   .badge {
+    flex: 0 0 75px;
     border-radius: 5px;
     color: white;
     width: 75px;
@@ -72,6 +73,15 @@ const ItemChangeLogs = styled.div`
     li {
       margin-bottom: 20px;
 
+      p {
+        margin-top: 0;
+        font-size: 16px;
+      }
+      span {
+        display: block;
+        margin-bottom: 5px;
+      }
+
       img {
         display: block;
         margin-top: 10px;
@@ -95,7 +105,13 @@ function ReleaseItem({ version, date, changeLogs, release }) {
             <ul>
               {log.list.map((item, index) => (
                 <li key={index}>
-                  {index + 1}. {item.text}
+                  <p>
+                    {index + 1}. {item.title}
+                  </p>
+                  {item.description &&
+                    item.description.split("\n").map((line, index) => {
+                      return <span key={index}>{line}</span>;
+                    })}
                   {item.image && <img src={item.image} alt="상세 이미지" />}
                 </li>
               ))}
