@@ -325,8 +325,6 @@ const releaseData = {
   ]
 };
 
-// console.log(releaseData);
-
 function ReleaseList() {
   const [platformType, setPlatformType] = useState("Web");
   const [state, setState] = useState({
